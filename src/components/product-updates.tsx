@@ -154,7 +154,7 @@ const ProductUpdates = () => {
         </header>
 
         <div className="grid grid-cols-[200px,1fr]">
-          {updates.map((update, index) => (
+          {updates.map((update) => (
             <React.Fragment key={update.id}>
               <TimelineDate date={update.date} />
               <UpdateContent update={update} />
