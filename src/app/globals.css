@@ -19,3 +19,19 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  font-family: 'Reckless Neue';
+  src: url('/fonts/RecklessNeue/RecklessNeue-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Reckless Neue';
+  src: url('/fonts/RecklessNeue/RecklessNeue-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
