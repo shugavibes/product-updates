@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import ProductUpdate from '@/components/product-update';
+import ProductUpdate from '../../../components/product-update';
 import { updatesData } from '@/components/product-updates';
 import { Metadata } from 'next';
 
