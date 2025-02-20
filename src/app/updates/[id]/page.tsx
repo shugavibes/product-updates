@@ -3,12 +3,13 @@ import ProductUpdate from '../../../components/product-update';
 import { updatesData } from '@/components/product-updates';
 import { Metadata } from 'next';
 
-export default async function Page({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const update = updatesData.updates.find(u => u.id === params.id);
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export default async function Page({ params }: Props) {
+  const resolvedParams = await params;
+  const update = updatesData.updates.find(u => u.id === resolvedParams.id);
   
   if (!update) {
     notFound();
@@ -17,12 +18,9 @@ export default async function Page({
   return <ProductUpdate update={update} />;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
-  const update = updatesData.updates.find(u => u.id === params.id);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = await params;
+  const update = updatesData.updates.find(u => u.id === resolvedParams.id);
   
   return {
     title: update ? `${update.title} | Atlas Updates` : 'Atlas Updates',
