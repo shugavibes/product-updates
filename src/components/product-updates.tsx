@@ -144,7 +144,7 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
         <div className="text-gray-300 whitespace-pre-line mb-4">
           <ReactMarkdown
             components={{
-              a: ({ node, ...props }) => <a {...props} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" />
+              a: ({ ...props }) => <a {...props} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" />
             }}
           >
             {additionalText}
