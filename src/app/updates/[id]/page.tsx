@@ -2,13 +2,14 @@ import { notFound } from 'next/navigation';
 import ProductUpdate from '@/components/product-update';
 import { updatesData } from '@/components/product-updates';
 
-interface Props {
+type Props = {
   params: {
     id: string;
   };
-}
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-export default async function UpdatePage({ params }: Props) {
+export default async function UpdatePage({ params, searchParams }: Props) {
   const update = updatesData.updates.find(u => u.id === params.id);
   
   if (!update) {
