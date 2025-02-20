@@ -9,7 +9,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default async function UpdatePage({ params, searchParams }: Props) {
+export default async function UpdatePage({ params }: Props) {
   const update = updatesData.updates.find(u => u.id === params.id);
   
   if (!update) {
