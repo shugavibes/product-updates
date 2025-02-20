@@ -1,11 +1,16 @@
 import { notFound } from 'next/navigation';
 import ProductUpdate from '@/components/product-update';
 import { updatesData } from '@/components/product-updates';
+import { Metadata } from 'next';
 
-export default function UpdatePage({
+interface PageParams {
+  id: string;
+}
+
+export default async function UpdatePage({
   params,
 }: {
-  params: { id: string }
+  params: PageParams;
 }) {
   const update = updatesData.updates.find(u => u.id === params.id);
   
@@ -16,7 +21,14 @@ export default function UpdatePage({
   return <ProductUpdate update={update} />;
 }
 
-// Generate static params for all updates
+export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
+  const update = updatesData.updates.find(u => u.id === params.id);
+  
+  return {
+    title: update ? `${update.title} | Atlas Updates` : 'Atlas Updates',
+  };
+}
+
 export async function generateStaticParams() {
   return updatesData.updates.map((update) => ({
     id: update.id,
