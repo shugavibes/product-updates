@@ -2,13 +2,13 @@ import { notFound } from 'next/navigation';
 import ProductUpdate from '@/components/product-update';
 import { updatesData } from '@/components/product-updates';
 
-interface PageProps {
+interface Props {
   params: {
     id: string;
   };
 }
 
-export default function UpdatePage({ params }: PageProps) {
+export default async function UpdatePage({ params }: Props) {
   const update = updatesData.updates.find(u => u.id === params.id);
   
   if (!update) {
