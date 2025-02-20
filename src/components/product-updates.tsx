@@ -2,8 +2,9 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
 
-interface Update {
+export interface Update {
   id: string;
   date: string;
   title: string;
@@ -23,20 +24,30 @@ interface UpdatesData {
   };
 }
 
-const updatesData: UpdatesData = {
+export const updatesData: UpdatesData = {
   "updates": [
     {
       "id": "001",
+      "date": "2025-02-15",
+      "title": "Display coupon value in local currency",
+      "description": "You'll see the value of each coupon in your country's currency, so you know how much it's worth for each product.\n\nFor example, if you request a coupon for a food delivery, you'll see the benefit's value in points and also in Argentine Pesos (if you're in Argentina). The amount in ARS is what will be applied as a discount in the delivery app.",
+      "tags": ["Teams App", "Improvement"],
+      "type": "major",
+      "imageUrl": "/cupon.png",
+      "additionalText": "\nThis change will gradually apply to all new available coupons, so it may take a few weeks before you see it across all benefits.",
+    },
+    {
+      "id": "002",
       "date": "2025-02-24",
       "title": "Extra Points",
       "description": "Now you can buy additional Atlas points to take advantage of more benefits. You can add points in two ways:\n-Recurring: Receive a specific amount of extra points every month.\n-One-Time: Add points just once.\n\nWith this functionality, you have more possibilities to acquire higher value benefits or to complete what you need to use all the points for the month.",
       "tags": ["Teams App", "New Feature"],
       "type": "major",
       "imageUrl": "/extrapoints.png",
-      "additionalText": "\nFind out how to do it in this article.",
+      "additionalText": "\nFind out how to do it in [this article](https://ayuda.heyatlas.com/es/articles/10370653-como-adquirir-puntos-adicionales).",
     },
     {
-      "id": "002",
+      "id": "003",
       "date": "2025-01-16",
       "title": "New Admin's onboarding & authentication experience",
       "description": "We've made a complete update to the authentication experience for admins. The most significant change is the migration from an external WorkOS process to having a full integration, which allows us to have total control over every aspect of the registration and access process.\n\nFrom the user's perspective, this enhances the experience by reducing errors and providing a complete flow within the Atlas platform without having to go through other services. Additionally, we've added Google social login and a clearer password recovery and change process.\n\nAlso, during the account creation flow, users can now schedule a call with Atlas to receive sales support, or continue with self-onboarding and start using Atlas on their own in just a few minutes.",
@@ -45,7 +56,7 @@ const updatesData: UpdatesData = {
       "videoUrl": "https://www.loom.com/embed/979a1c34c0e74531ae73fbd4df592ddd?sid=a3926e34-dcc9-4992-874e-4c23f3831bce"
     },
     {
-      "id": "003",
+      "id": "004",
       "date": "2025-02-15",
       "title": "Functionality TBD",
       "description": "You can now export your data in multiple formats including PDF, CSV, and Excel. We've also added customization options for reports.",
@@ -94,11 +105,18 @@ interface UpdateContentProps {
 }
 
 const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
-  const { title, description, tags, type, videoUrl, imageUrl, additionalText } = update;
+  const { id, title, description, tags, type, videoUrl, imageUrl, additionalText } = update;
   
   return (
     <div className="py-8">
-      <h2 className="text-xl font-semibold text-white mb-3">{title}</h2>
+      <Link 
+        href={`/updates/${id}`} 
+        className="group inline-block"
+      >
+        <h2 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-400">
+          {title}
+        </h2>
+      </Link>
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag) => (
           <Badge 
@@ -123,7 +141,15 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
         </div>
       )}
       {additionalText && (
-        <p className="text-gray-300 whitespace-pre-line mb-4">{additionalText}</p>
+        <div className="text-gray-300 whitespace-pre-line mb-4">
+          <ReactMarkdown
+            components={{
+              a: ({ node, ...props }) => <a {...props} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" />
+            }}
+          >
+            {additionalText}
+          </ReactMarkdown>
+        </div>
       )}
       {videoUrl && (
         <div className="relative pt-[40.40%]">
