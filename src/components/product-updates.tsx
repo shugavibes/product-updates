@@ -28,7 +28,17 @@ export const updatesData: UpdatesData = {
   "updates": [
     {
       "id": "001",
-      "date": "2025-02-15",
+      "date": "2025-02-25",
+      "title": "Scheduled Gifts",
+      "description": "HR Admins can now schedule gift deliveries for specific days. This feature enhances the experience in these key areas:\n\n-Admins can set up monthly gifts in advance if they already know celebration or birthday dates, saving time on management and ensuring no important date is missed.\n-Admins have more control over their budget by managing it at the beginning of the month instead of requesting fund approvals or payments each time they need to send gifts.\n\n",
+      "tags": ["Admin", "Gifts", "New Feature"],
+      "type": "enhancement",
+      "imageUrl": "/gifts.png",
+      "additionalText": "\nStart giving gifts to your team [with Atlas.](http://admin.heyatlas.com/es/account).",
+    },
+    {
+      "id": "002",
+      "date": "2025-02-24",
       "title": "Display coupon value in local currency",
       "description": "You'll see the value of each coupon in your country's currency, so you know how much it's worth for each product.\n\nFor example, if you request a coupon for a food delivery, you'll see the benefit's value in points and also in Argentine Pesos (if you're in Argentina). The amount in ARS is what will be applied as a discount in the delivery app.",
       "tags": ["Teams App", "Improvement"],
@@ -37,7 +47,7 @@ export const updatesData: UpdatesData = {
       "additionalText": "\nThis change will gradually apply to all new available coupons, so it may take a few weeks before you see it across all benefits.",
     },
     {
-      "id": "002",
+      "id": "003",
       "date": "2025-02-24",
       "title": "Extra Points",
       "description": "Now you can buy additional Atlas points to take advantage of more benefits. You can add points in two ways:\n-Recurring: Receive a specific amount of extra points every month.\n-One-Time: Add points just once.\n\nWith this functionality, you have more possibilities to acquire higher value benefits or to complete what you need to use all the points for the month.",
@@ -47,7 +57,7 @@ export const updatesData: UpdatesData = {
       "additionalText": "\nFind out how to do it in [this article](https://ayuda.heyatlas.com/es/articles/10370653-como-adquirir-puntos-adicionales).",
     },
     {
-      "id": "003",
+      "id": "004",
       "date": "2025-01-16",
       "title": "New Admin's onboarding & authentication experience",
       "description": "We've made a complete update to the authentication experience for admins. The most significant change is the migration from an external WorkOS process to having a full integration, which allows us to have total control over every aspect of the registration and access process.\n\nFrom the user's perspective, this enhances the experience by reducing errors and providing a complete flow within the Atlas platform without having to go through other services. Additionally, we've added Google social login and a clearer password recovery and change process.\n\nAlso, during the account creation flow, users can now schedule a call with Atlas to receive sales support, or continue with self-onboarding and start using Atlas on their own in just a few minutes.",
@@ -56,12 +66,14 @@ export const updatesData: UpdatesData = {
       "videoUrl": "https://www.loom.com/embed/979a1c34c0e74531ae73fbd4df592ddd?sid=a3926e34-dcc9-4992-874e-4c23f3831bce"
     },
     {
-      "id": "004",
-      "date": "2025-02-15",
-      "title": "Functionality TBD",
-      "description": "You can now export your data in multiple formats including PDF, CSV, and Excel. We've also added customization options for reports.",
-      "tags": ["Feature", "Export"],
-      "type": "feature"
+      "id": "005",
+      "date": "2024-12-15",
+      "title": "Service Payment - TAPI integration",
+      "description": "In remote work dynamics, employees' homes serve as their workspaces. Allowing them to pay for their services using company benefits creates value for employees while providing HR administrators with a powerful retention and recruitment tool.\n\nThat's why we've integrated with Tapi, the largest service payment provider in LATAM. This enables our users to pay for their home services using a benefit provided by their company.\n\nThe first version of this integration covers internet services in Argentina, but we will gradually expand to more categories and countries until we complete the integration in Colombia, Mexico, Chile, and Peru.",
+      "tags": ["Feature", "Benefits"],
+      "type": "feature",
+      "videoUrl": "https://www.youtube.com/embed/BSOR3t5kjII",
+      "additionalText": "-\nFind out how to do it in [this article](https://ayuda.heyatlas.com/es/articles/9917579-como-pagar-tus-servicios-con-puntos-atlas-faqs)."
     }
   ],
   "metadata": {
@@ -128,15 +140,34 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
           </Badge>
         ))}
       </div>
-      <p className="text-gray-300 whitespace-pre-line mb-4">{description}</p>
+      <div className="text-gray-300 whitespace-pre-line mb-4">
+        <ReactMarkdown
+          components={{
+            a: ({ ...props }) => <a {...props} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" />,
+            strong: ({ ...props }) => <strong {...props} className="font-bold" />
+          }}
+        >
+          {description}
+        </ReactMarkdown>
+      </div>
       {imageUrl && (
         <div className="mb-4 rounded-lg overflow-hidden">
           <Image
             src={imageUrl}
             alt={title}
-            width={600}
-            height={300}
-            className="w-50% rounded-xl"
+            width={id === "001" ? 400 : 600}
+            height={id === "001" ? 200 : 300}
+            className={`${id === "001" ? "w-40%" : "w-50%"} rounded-xl`}
+          />
+        </div>
+      )}
+      {videoUrl && (
+        <div className="relative pt-[50.50%]">
+          <iframe 
+            src={videoUrl}
+            frameBorder="0"
+            allowFullScreen
+            className="absolute top-0 left-0 w-full h-full"
           />
         </div>
       )}
@@ -149,16 +180,6 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
           >
             {additionalText}
           </ReactMarkdown>
-        </div>
-      )}
-      {videoUrl && (
-        <div className="relative pt-[40.40%]">
-          <iframe 
-            src="https://www.loom.com/embed/979a1c34c0e74531ae73fbd4df592ddd?sid=a3926e34-dcc9-4992-874e-4c23f3831bce"
-            frameBorder="0"
-            allowFullScreen
-            className="absolute top-0 left-0 w-full h-full"
-          />
         </div>
       )}
     </div>
