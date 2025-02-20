@@ -3,17 +3,13 @@ import ProductUpdate from '../../../components/product-update';
 import { updatesData } from '@/components/product-updates';
 import { Metadata } from 'next';
 
-// Define the params type
-type Params = { id: string };
+interface PageProps {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
-// Define the page props type
-type PageProps = {
-  params: Params;
-};
-
-// Define the page component
-export default async function Page({ params }: PageProps) {
-  const update = updatesData.updates.find(u => u.id === params.id);
+export default async function Page(props: PageProps) {
+  const update = updatesData.updates.find(u => u.id === props.params.id);
   
   if (!update) {
     notFound();
@@ -22,17 +18,15 @@ export default async function Page({ params }: PageProps) {
   return <ProductUpdate update={update} />;
 }
 
-// Generate metadata
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const update = updatesData.updates.find(u => u.id === params.id);
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const update = updatesData.updates.find(u => u.id === props.params.id);
   
   return {
     title: update ? `${update.title} | Atlas Updates` : 'Atlas Updates',
   };
 }
 
-// Generate static params
-export async function generateStaticParams(): Promise<Params[]> {
+export async function generateStaticParams() {
   return updatesData.updates.map((update) => ({
     id: update.id,
   }));
