@@ -28,26 +28,6 @@ export const updatesData: UpdatesData = {
   "updates": [
     {
       "id": "001",
-      "date": "2025-02-25",
-      "title": "Scheduled Gifts",
-      "description": "HR Admins can now schedule gift deliveries for specific days. This feature enhances the experience in these key areas:\n\n-Admins can set up monthly gifts in advance if they already know celebration or birthday dates, saving time on management and ensuring no important date is missed.\n-Admins have more control over their budget by managing it at the beginning of the month instead of requesting fund approvals or payments each time they need to send gifts.\n\n",
-      "tags": ["Admin", "Gifts", "New Feature"],
-      "type": "enhancement",
-      "imageUrl": "/gifts.png",
-      "additionalText": "\nStart giving gifts to your team [with Atlas.](http://admin.heyatlas.com/es/account).",
-    },
-    {
-      "id": "002",
-      "date": "2025-02-24",
-      "title": "Display coupon value in local currency",
-      "description": "You'll see the value of each coupon in your country's currency, so you know how much it's worth for each product.\n\nFor example, if you request a coupon for a food delivery, you'll see the benefit's value in points and also in Argentine Pesos (if you're in Argentina). The amount in ARS is what will be applied as a discount in the delivery app.",
-      "tags": ["Teams App", "Improvement"],
-      "type": "major",
-      "imageUrl": "/cupon.png",
-      "additionalText": "\nThis change will gradually apply to all new available coupons, so it may take a few weeks before you see it across all benefits.",
-    },
-    {
-      "id": "003",
       "date": "2025-02-24",
       "title": "Extra Points",
       "description": "Now you can buy additional Atlas points to take advantage of more benefits. You can add points in two ways:\n-Recurring: Receive a specific amount of extra points every month.\n-One-Time: Add points just once.\n\nWith this functionality, you have more possibilities to acquire higher value benefits or to complete what you need to use all the points for the month.",
@@ -57,7 +37,7 @@ export const updatesData: UpdatesData = {
       "additionalText": "\nFind out how to do it in [this article](https://ayuda.heyatlas.com/es/articles/10370653-como-adquirir-puntos-adicionales).",
     },
     {
-      "id": "004",
+      "id": "002",
       "date": "2025-01-16",
       "title": "New Admin's onboarding & authentication experience",
       "description": "We've made a complete update to the authentication experience for admins. The most significant change is the migration from an external WorkOS process to having a full integration, which allows us to have total control over every aspect of the registration and access process.\n\nFrom the user's perspective, this enhances the experience by reducing errors and providing a complete flow within the Atlas platform without having to go through other services. Additionally, we've added Google social login and a clearer password recovery and change process.\n\nAlso, during the account creation flow, users can now schedule a call with Atlas to receive sales support, or continue with self-onboarding and start using Atlas on their own in just a few minutes.",
@@ -66,7 +46,7 @@ export const updatesData: UpdatesData = {
       "videoUrl": "https://www.loom.com/embed/979a1c34c0e74531ae73fbd4df592ddd?sid=a3926e34-dcc9-4992-874e-4c23f3831bce"
     },
     {
-      "id": "005",
+      "id": "003",
       "date": "2024-12-15",
       "title": "Service Payment - TAPI integration",
       "description": "In remote work dynamics, employees' homes serve as their workspaces. Allowing them to pay for their services using company benefits creates value for employees while providing HR administrators with a powerful retention and recruitment tool.\n\nThat's why we've integrated with Tapi, the largest service payment provider in LATAM. This enables our users to pay for their home services using a benefit provided by their company.\n\nThe first version of this integration covers internet services in Argentina, but we will gradually expand to more categories and countries until we complete the integration in Colombia, Mexico, Chile, and Peru.",
@@ -76,7 +56,7 @@ export const updatesData: UpdatesData = {
       "additionalText": "-\nFind out how to do it in [this article](https://ayuda.heyatlas.com/es/articles/9917579-como-pagar-tus-servicios-con-puntos-atlas-faqs)."
     },
     {
-      "id": "006",
+      "id": "004",
       "date": "2018-12-09",
       "title": "Hey, there are too many previous releases to list here right now 😉",
       "description": "We have many more releases prior to these, but we only recently started sharing them on this site, and we believe it's not worth going too far back.\n\nOur focus is on delivering value consistently, with quality and speed, so everything new we're working on will get the spotlight it deserves here.",
@@ -165,9 +145,9 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
           <Image
             src={imageUrl}
             alt={title}
-            width={id === "001" ? 400 : 600}
-            height={id === "001" ? 200 : 300}
-            className={`${id === "001" ? "w-40%" : "w-50%"} rounded-xl`}
+            width={id === "001" ? 600 : 800}
+            height={id === "001" ? 300 : 400}
+            className={`${id === "001" ? "w-100%" : "w-100%"} rounded-xl`}
           />
         </div>
       )}
@@ -226,16 +206,26 @@ const ProductUpdates = () => {
             </Link>
           </div>
           
-          {/* Add additional header items here if needed */}
-          <nav className="hidden md:flex items-center space-x-4">
-            {/* Add navigation items here if needed */}
+          <nav className="flex items-center space-x-4">
+            <Link 
+              href="/" 
+              className="text-gray-300 hover:text-white border-b-2 border-blue-400 transition-all duration-300"
+            >
+              Released
+            </Link>
+            <Link 
+              href="/upcoming" 
+              className="text-gray-300 hover:text-white border-b-2 border-transparent transition-all duration-300"
+            >
+              Coming Soon
+            </Link>
           </nav>
         </div>
       </header>
 
       <div className="max-w-6xl mx-auto py-12 px-4">
         <header className="mb-16 text-left">
-          <h1 className="font-reckless text-6xl text-white mb-4">Product Updates</h1>
+          <h1 className="font-reckless text-6xl text-white mb-4">Latest Product Updates</h1>
         </header>
 
         <div className="grid grid-cols-[200px,1fr]">
