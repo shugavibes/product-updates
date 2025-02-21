@@ -228,7 +228,7 @@ const ProductUpdates = () => {
           <h1 className="font-reckless text-6xl text-white mb-4">Latest Product Updates</h1>
         </header>
 
-        <div className="grid grid-cols-[200px,1fr]">
+        <div className="grid grid-cols-[auto,1fr] md:grid-cols-[200px,1fr]">
           {updates.map((update) => (
             <React.Fragment key={update.id}>
               <TimelineDate date={update.date} />
