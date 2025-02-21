@@ -63,7 +63,7 @@ export const updatesData: UpdatesData = {
       "tags": ["Atlas", "Product Updates"],
       "type": "feature",
       "videoUrl": "/liquidlogo.mov",
-      "additionalText": "-\nIf you want to learn more about Atlas, [reach out to us through our website](https://www.heyatlas.com)."
+      "additionalText": "-\n\nPS: That’s not the date of the first release, it’s a random date. But if you want to learn more about Atlas, [reach out to us through our website](https://www.heyatlas.com)."
     }
   ],
   "metadata": {
