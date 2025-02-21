@@ -71,7 +71,7 @@ export default function ProductUpdate({ update }: { update: Update }) {
           )}
 
           {videoUrl && (
-            <div className="relative pt-[56.25%] mb-8">
+            <div className="relative pt-[100.100%] mb-8">
               <iframe 
                 src={videoUrl}
                 frameBorder="0"

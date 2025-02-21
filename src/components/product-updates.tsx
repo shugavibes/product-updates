@@ -74,11 +74,21 @@ export const updatesData: UpdatesData = {
       "type": "feature",
       "videoUrl": "https://www.youtube.com/embed/BSOR3t5kjII",
       "additionalText": "-\nFind out how to do it in [this article](https://ayuda.heyatlas.com/es/articles/9917579-como-pagar-tus-servicios-con-puntos-atlas-faqs)."
+    },
+    {
+      "id": "006",
+      "date": "2018-12-09",
+      "title": "Hey, there are too many previous releases to list here right now 😉",
+      "description": "We have many more releases prior to these, but we only recently started sharing them on this site, and we believe it's not worth going too far back.\n\nOur focus is on delivering value consistently, with quality and speed, so everything new we're working on will get the spotlight it deserves here.",
+      "tags": ["Atlas", "Product Updates"],
+      "type": "feature",
+      "videoUrl": "/liquidlogo.mov",
+      "additionalText": "-\nIf you want to learn more about Atlas, [reach out to us through our website](https://www.heyatlas.com)."
     }
   ],
   "metadata": {
-    "lastUpdate": "2025-02-17",
-    "totalUpdates": 3
+    "lastUpdate": "2025-02-21",
+    "totalUpdates": 6
   }
 };
 
@@ -162,13 +172,24 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
         </div>
       )}
       {videoUrl && (
-        <div className="relative pt-[50.50%]">
-          <iframe 
-            src={videoUrl}
-            frameBorder="0"
-            allowFullScreen
-            className="absolute top-0 left-0 w-full h-full"
-          />
+        <div className={`relative ${id === "006" ? "pt-[50%]" : "pt-[50.50%]"}`}>
+          {videoUrl.endsWith('.mov') ? (
+            <video
+              src={videoUrl}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute top-0 left-0 w-full h-full"
+            />
+          ) : (
+            <iframe 
+              src={videoUrl}
+              frameBorder="0"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            />
+          )}
         </div>
       )}
       {additionalText && (
