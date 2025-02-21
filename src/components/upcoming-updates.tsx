@@ -3,7 +3,6 @@ import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { Update } from './product-updates';
 
 const upcomingData = {
   "updates": [
