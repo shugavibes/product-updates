@@ -7,28 +7,38 @@ import ReactMarkdown from 'react-markdown';
 const upcomingData = {
   "updates": [
     {
-      "id": "upcoming-001",
+      "id": "upcoming-003",
       "date": "March 2025",
       "title": "Scheduled Gifts",
       "description": "HR Admins can now schedule gift deliveries for specific days. This feature enhances the experience in these key areas:\n\n-Admins can set up monthly gifts in advance if they already know celebration or birthday dates, saving time on management and ensuring no important date is missed.\n-Admins have more control over their budget by managing it at the beginning of the month instead of requesting fund approvals or payments each time they need to send gifts.\n\n",
       "tags": ["Admin", "Gifts", "New Feature"],
       "type": "enhancement",
       "imageUrl": "/gifts.png",
-      "additionalText": "\nStart giving gifts to your team [with Atlas.](http://admin.heyatlas.com/es/account).",
+      "additionalText": "\nStart giving gifts to your team [with Atlas.](http://admin.heyatlas.com/es/account)."
+    },
+    {
+      "id": "upcoming-001",
+      "date": "March 2025",
+      "title": "In app service payment",
+      "description": "In the new update of this feature, service payments are now processed end-to-end within the mobile app. This improves the experience of paying for services with Atlas Points in the following ways:\n\n-The contractor has greater clarity on the invoice amount and available points.\n-They can pay multiple invoices at once.\n-They can pay both fixed and open-amount invoices.\n-They can view overdue invoices.",
+      "tags": ["Teams App", "New Feature"],
+      "type": "major",
+      "imageUrl": "/service-payment.png",
+      "additionalText": "\nFor now, this feature is only available for internet service payments in Argentina, but soon all services will be available in Argentina, Chile, Peru, Colombia, and Mexico."
     },
     {
       "id": "upcoming-002",
       "date": "March 2025",
-      "title": "Display coupon value in local currency",
-      "description": "You'll see the value of each coupon in your country's currency, so you know how much it's worth for each product.\n\nFor example, if you request a coupon for a food delivery, you'll see the benefit's value in points and also in Argentine Pesos (if you're in Argentina). The amount in ARS is what will be applied as a discount in the delivery app.",
-      "tags": ["Teams App", "Improvement"],
+      "title": "Assign paid by company benefits",
+      "description": "HR Admins can now assign specific benefits that are paid directly by the company. This new functionality includes:\n\n-Set up benefits that don't consume employee points\n-Define which employees receive company-paid benefits\n-Assigning benefits more autonomously without contacting CX\n-Greater control and customization over which benefit to give\n\nThis feature gives companies more flexibility in how they structure their benefits program, allowing for a mix of point-based and company-paid benefits.",
+      "tags": ["Admin", "Benefits", "New Feature"],
       "type": "major",
-      "imageUrl": "/cupon.png",
-      "additionalText": "\nThis change will gradually apply to all new available coupons, so it may take a few weeks before you see it across all benefits.",
+      "imageUrl": "/pbc-benefits.png",
+      "additionalText": "\nThis feature will first be released for assigning health plans and will later support more benefits."
     }
   ],
   "metadata": {
-    "totalUpcoming": 1
+    "totalUpcoming": 3
   }
 };
 
@@ -98,8 +108,8 @@ const UpcomingUpdates = () => {
                     <Image
                       src={update.imageUrl}
                       alt={update.title}
-                      width={update.id === "upcoming-001" ? 500 : 700}
-                      height={update.id === "upcoming-001" ? 300 : 500}
+                      width={update.id === "upcoming-001" ? 700 : 700}
+                      height={update.id === "upcoming-001" ? 400 : 500}
                       className={`${update.id === "upcoming-001" ? "w-100%" : "w-100%"} rounded-xl`}
                     />
                   </div>
