@@ -18,7 +18,7 @@ const upcomingData = {
     },
     {
       "id": "upcoming-001",
-      "date": "March 2025",
+      "date": "April 2025",
       "title": "In app service payment",
       "description": "In the new update of this feature, service payments are now processed end-to-end within the mobile app. This improves the experience of paying for services with Atlas Points in the following ways:\n\n-The contractor has greater clarity on the invoice amount and available points.\n-They can pay multiple invoices at once.\n-They can pay both fixed and open-amount invoices.\n-They can view overdue invoices.",
       "tags": ["Teams App", "New Feature"],
@@ -27,8 +27,18 @@ const upcomingData = {
       "additionalText": "\nFor now, this feature is only available for internet service payments in Argentina, but soon all services will be available in Argentina, Chile, Peru, Colombia, and Mexico."
     },
     {
+      "id": "upcoming-004",
+      "date": "April 2025",
+      "title": "Enhanced Usage Metrics Dashboard",
+      "description": "We are adding a metrics dashboard to the Admin platform that provides detailed insights into your team's points and benefits usage.\nOn the homepage, you'll find some of the most important data, while the full set of metrics will be available in the Analytics section.\n\nIn this section, admins will be able to see:\n\n-User and points consumption growth month over month\n-Total credit consumption\n-Top and least spending users\n-Most purchased categories and benefits\n-Additional data to complement the overall insights.\n\nThis new dashboard will help admins better track their teams, enhance the usage of the benefits that matter most to their company, and make more informed decisions on how to continue growing their compensation package with Atlas.",
+      "tags": ["Admin", "Analytics", "New Feature"],
+      "type": "enhancement",
+      "imageUrl": "/metrics-dashboard.png",
+      "additionalText": "\nGet early access to the metrics dashboard by [contacting our team](https://www.heyatlas.com/contact)."
+    },
+    {
       "id": "upcoming-002",
-      "date": "March 2025",
+      "date": "April 2025",
       "title": "Assign paid by company benefits",
       "description": "HR Admins can now assign specific benefits that are paid directly by the company. This new functionality includes:\n\n-Set up benefits that don't consume employee points\n-Define which employees receive company-paid benefits\n-Assigning benefits more autonomously without contacting CX\n-Greater control and customization over which benefit to give\n\nThis feature gives companies more flexibility in how they structure their benefits program, allowing for a mix of point-based and company-paid benefits.",
       "tags": ["Admin", "Benefits", "New Feature"],
@@ -38,7 +48,7 @@ const upcomingData = {
     }
   ],
   "metadata": {
-    "totalUpcoming": 3
+    "totalUpcoming": 4
   }
 };
 
@@ -108,9 +118,9 @@ const UpcomingUpdates = () => {
                     <Image
                       src={update.imageUrl}
                       alt={update.title}
-                      width={update.id === "upcoming-001" ? 700 : 700}
-                      height={update.id === "upcoming-001" ? 400 : 500}
-                      className={`${update.id === "upcoming-001" ? "w-100%" : "w-100%"} rounded-xl`}
+                      width={update.imageUrl === "/metrics-dashboard.png" ? 800 : update.imageUrl === "/gifts.png" ? 500 : 700}
+                      height={update.imageUrl === "/metrics-dashboard.png" ? 500 : update.imageUrl === "/gifts.png" ? 300 : 400}
+                      className="w-100% rounded-xl"
                     />
                   </div>
                 )}
