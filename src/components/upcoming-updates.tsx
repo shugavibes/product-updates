@@ -7,14 +7,14 @@ import ReactMarkdown from 'react-markdown';
 const upcomingData = {
   "updates": [
     {
-      "id": "upcoming-003",
+      "id": "upcoming-000",
       "date": "March 2025",
-      "title": "Scheduled Gifts",
-      "description": "HR Admins can now schedule gift deliveries for specific days. This feature enhances the experience in these key areas:\n\n-Admins can set up monthly gifts in advance if they already know celebration or birthday dates, saving time on management and ensuring no important date is missed.\n-Admins have more control over their budget by managing it at the beginning of the month instead of requesting fund approvals or payments each time they need to send gifts.\n\n",
-      "tags": ["Admin", "Gifts", "New Feature"],
-      "type": "enhancement",
-      "imageUrl": "/gifts.png",
-      "additionalText": "\nStart giving gifts to your team [with Atlas.](http://admin.heyatlas.com/es/account)."
+      "title": "Usage Metrics for Admins",
+      "description": "We are adding a metrics dashboard to the Admin platform that provides detailed insights into your team's points and benefits usage. On the homepage, you'll find some of the most important data, while the full set of metrics will be available in the Analytics section.\n\nIn this section, admins will be able to see:\n\n-User and points consumption growth month over month\n-Total credit consumption\n-Top and least spending users\n-Most purchased categories and benefits\n-Additional data to complement the overall insights.\n\nThis new dashboard will help admins better track their teams, enhance the usage of the benefits that matter most to their company, and make more informed decisions on how to continue growing their compensation package with Atlas.",
+      "tags": ["Admin", "Analytics", "New Feature"],
+      "type": "major",
+      "imageUrl": "/metrics-dashboard.png",
+      "additionalText": "-\nGet early access to the metrics dashboard by [contacting our team.](https://www.heyatlas.com/contact)."
     },
     {
       "id": "upcoming-001",
@@ -118,9 +118,9 @@ const UpcomingUpdates = () => {
                     <Image
                       src={update.imageUrl}
                       alt={update.title}
-                      width={update.imageUrl === "/metrics-dashboard.png" ? 800 : update.imageUrl === "/gifts.png" ? 500 : 700}
-                      height={update.imageUrl === "/metrics-dashboard.png" ? 500 : update.imageUrl === "/gifts.png" ? 300 : 400}
-                      className="w-100% rounded-xl"
+                      width={update.id === "upcoming-000" ? 900 : 700}
+                      height={update.id === "upcoming-000" ? 700 : 500}
+                      className={`${update.id === "upcoming-000" ? "w-100%" : "w-100%"} rounded-xl`}
                     />
                   </div>
                 )}

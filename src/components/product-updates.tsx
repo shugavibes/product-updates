@@ -27,6 +27,26 @@ interface UpdatesData {
 export const updatesData: UpdatesData = {
   "updates": [
     {
+      "id": "000a",
+      "date": "2025-03-20",
+      "title": "Scheduled Gifts",
+      "description": "HR Admins can now schedule gift deliveries for specific days. This feature enhances the experience in these key areas:\n\n-Admins can set up monthly gifts in advance if they already know celebration or birthday dates, saving time on management and ensuring no important date is missed.\n-Admins have more control over their budget by managing it at the beginning of the month instead of requesting fund approvals or payments each time they need to send gifts.\n\n",
+      "tags": ["Admin", "Gifts", "New Feature"],
+      "type": "enhancement",
+      "videoUrl": "https://www.loom.com/embed/752c8797124941699b8c140d727b3176?sid=fb346f4e-2d06-4eea-a4ad-d56ddde09c39",
+      "additionalText": "-\nStart giving gifts to your team [with Atlas](https://www.heyatlas.com/gifts)."
+    },
+    {
+      "id": "000",
+      "date": "2025-03-20",
+      "title": "Gift reminder",
+      "description": "We've added a new feature that helps Admins better track the gifts they send to their teams.\n\nNow, from the list of sent gifts, they can:\n\t•\tSee who has opened the gift\n\t•\tSend a reminder email to encourage recipients to use their gift\n\nFor now, this only applies to selected benefit gifts and does not apply to balance gifts.\n\nThis provides Admins with more insights and greater control over their teams' experience with the gifts they receive.",
+      "tags": ["Admin", "New Feature", 'Gifts'],
+      "type": "enhancement",
+      "videoUrl": "https://www.loom.com/embed/752c8797124941699b8c140d727b3176?sid=e3631a5d-0787-4e6a-8650-0c25bd299436",
+      "additionalText": "-\nStart giving gifts to your team [with Atlas](https://www.heyatlas.com/gifts)."
+    },
+    {
       "id": "001",
       "date": "2025-03-17",
       "title": "Display coupon value in local currency",
@@ -86,8 +106,8 @@ export const updatesData: UpdatesData = {
     }
   ],
   "metadata": {
-    "lastUpdate": "2025-03-17",
-    "totalUpdates": 8
+    "lastUpdate": "2025-03-20",
+    "totalUpdates": 7
   }
 };
 
