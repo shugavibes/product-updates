@@ -33,7 +33,7 @@ export const updatesData: UpdatesData = {
       "description": "HR Admins can now schedule gift deliveries for specific days. This feature enhances the experience in these key areas:\n\n-Admins can set up monthly gifts in advance if they already know celebration or birthday dates, saving time on management and ensuring no important date is missed.\n-Admins have more control over their budget by managing it at the beginning of the month instead of requesting fund approvals or payments each time they need to send gifts.\n\n",
       "tags": ["Admin", "Gifts", "New Feature"],
       "type": "enhancement",
-      "videoUrl": "https://www.loom.com/embed/752c8797124941699b8c140d727b3176?sid=fb346f4e-2d06-4eea-a4ad-d56ddde09c39",
+      "videoUrl": "https://www.loom.com/embed/0d8a40308d7649cdae3b3edea8ea4e8d?sid=c3957ca3-8e9a-48f7-bf79-bd9908ed7d6d",
       "additionalText": "-\nStart giving gifts to your team [with Atlas](https://www.heyatlas.com/gifts)."
     },
     {
