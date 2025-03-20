@@ -9,7 +9,7 @@ const upcomingData = {
     {
       "id": "upcoming-000",
       "date": "March 2025",
-      "title": "Usage Metrics - Admins",
+      "title": "Usage Metrics for Admins",
       "description": "We are adding a metrics dashboard to the Admin platform that provides detailed insights into your team's points and benefits usage. On the homepage, you'll find some of the most important data, while the full set of metrics will be available in the Analytics section.\n\nIn this section, admins will be able to see:\n\n-User and points consumption growth month over month\n-Total credit consumption\n-Top and least spending users\n-Most purchased categories and benefits\n-Additional data to complement the overall insights.\n\nThis new dashboard will help admins better track their teams, enhance the usage of the benefits that matter most to their company, and make more informed decisions on how to continue growing their compensation package with Atlas.",
       "tags": ["Admin", "Analytics", "New Feature"],
       "type": "major",
@@ -27,16 +27,6 @@ const upcomingData = {
       "additionalText": "\nFor now, this feature is only available for internet service payments in Argentina, but soon all services will be available in Argentina, Chile, Peru, Colombia, and Mexico."
     },
     {
-      "id": "upcoming-004",
-      "date": "April 2025",
-      "title": "Enhanced Usage Metrics Dashboard",
-      "description": "We are adding a metrics dashboard to the Admin platform that provides detailed insights into your team's points and benefits usage.\nOn the homepage, you'll find some of the most important data, while the full set of metrics will be available in the Analytics section.\n\nIn this section, admins will be able to see:\n\n-User and points consumption growth month over month\n-Total credit consumption\n-Top and least spending users\n-Most purchased categories and benefits\n-Additional data to complement the overall insights.\n\nThis new dashboard will help admins better track their teams, enhance the usage of the benefits that matter most to their company, and make more informed decisions on how to continue growing their compensation package with Atlas.",
-      "tags": ["Admin", "Analytics", "New Feature"],
-      "type": "enhancement",
-      "imageUrl": "/metrics-dashboard.png",
-      "additionalText": "\nGet early access to the metrics dashboard by [contacting our team](https://www.heyatlas.com/contact)."
-    },
-    {
       "id": "upcoming-002",
       "date": "April 2025",
       "title": "Assign paid by company benefits",
@@ -48,7 +38,7 @@ const upcomingData = {
     }
   ],
   "metadata": {
-    "totalUpcoming": 4
+    "totalUpcoming": 3
   }
 };
 
