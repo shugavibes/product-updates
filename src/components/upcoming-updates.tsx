@@ -7,18 +7,8 @@ import ReactMarkdown from 'react-markdown';
 const upcomingData = {
   "updates": [
     {
-      "id": "upcoming-000",
-      "date": "March 2025",
-      "title": "Usage Metrics for Admins",
-      "description": "We are adding a metrics dashboard to the Admin platform that provides detailed insights into your team's points and benefits usage. On the homepage, you'll find some of the most important data, while the full set of metrics will be available in the Analytics section.\n\nIn this section, admins will be able to see:\n\n-User and points consumption growth month over month\n-Total credit consumption\n-Top and least spending users\n-Most purchased categories and benefits\n-Additional data to complement the overall insights.\n\nThis new dashboard will help admins better track their teams, enhance the usage of the benefits that matter most to their company, and make more informed decisions on how to continue growing their compensation package with Atlas.",
-      "tags": ["Admin", "Analytics", "New Feature"],
-      "type": "major",
-      "imageUrl": "/metrics-dashboard.png",
-      "additionalText": "-\nGet early access to the metrics dashboard by [contacting our team.](https://www.heyatlas.com/contact)."
-    },
-    {
       "id": "upcoming-001",
-      "date": "April 2025",
+      "date": "July 2025",
       "title": "In app service payment",
       "description": "In the new update of this feature, service payments are now processed end-to-end within the mobile app. This improves the experience of paying for services with Atlas Points in the following ways:\n\n-The contractor has greater clarity on the invoice amount and available points.\n-They can pay multiple invoices at once.\n-They can pay both fixed and open-amount invoices.\n-They can view overdue invoices.",
       "tags": ["Teams App", "New Feature"],
@@ -27,14 +17,12 @@ const upcomingData = {
       "additionalText": "\nFor now, this feature is only available for internet service payments in Argentina, but soon all services will be available in Argentina, Chile, Peru, Colombia, and Mexico."
     },
     {
-      "id": "upcoming-002",
-      "date": "April 2025",
-      "title": "Assign paid by company benefits",
-      "description": "HR Admins can now assign specific benefits that are paid directly by the company. This new functionality includes:\n\n-Set up benefits that don't consume employee points\n-Define which employees receive company-paid benefits\n-Assigning benefits more autonomously without contacting CX\n-Greater control and customization over which benefit to give\n\nThis feature gives companies more flexibility in how they structure their benefits program, allowing for a mix of point-based and company-paid benefits.",
-      "tags": ["Admin", "Benefits", "New Feature"],
-      "type": "major",
-      "imageUrl": "/pbc-benefits.png",
-      "additionalText": "\nThis feature will first be released for assigning health plans and will later support more benefits."
+      "id": "upcoming-003",
+      "date": "August 2025",
+      "title": "App redesign",
+      "description": "We're bringing you a completely refreshed mobile app experience with a modern new look and feel. This comprehensive redesign focuses on improving usability and making your benefits more accessible than ever.\n\nKey improvements include:\n\n- Fresh, modern interface design\n- Enhanced user experience with intuitive navigation\n- Better information display about how to use your benefits\n\nThe new design will help you discover, understand, and use your Atlas benefits more effectively, making the most of your points and company perks.",
+      "tags": ["Teams App", "UX Improvement", "Redesign"],
+      "type": "major"
     }
   ],
   "metadata": {

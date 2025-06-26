@@ -27,10 +27,48 @@ interface UpdatesData {
 export const updatesData: UpdatesData = {
   "updates": [
     {
+      "id": "000e",
+      "date": "2025-07-01",
+      "title": "Flora Fertilidad partnership",
+      "description": "We're excited to announce our partnership with Flora Fertilidad, expanding our health benefits to include comprehensive fertility program assistance in Mexico and Argentina. This new benefit provides access to professional fertility support and guidance for employees and their partners.\n\nThis benefit can be accessed in two ways:\n\t•\tHR Admins can enable it directly for specific team members as a company-paid benefit\n\t•\tTeam members can purchase access using their Atlas points\n\nThis partnership reinforces our commitment to supporting employees through all stages of their personal and professional journey, offering meaningful health benefits that address real-life needs.",
+      "tags": ["Health", "Benefits"],
+      "type": "feature",
+      "imageUrl": "/flora-fertilidad.png",
+    },
+    {
+      "id": "000d",
+      "date": "2025-06-27",
+      "title": "Assign Health Plans paid by company",
+      "description": "HR Admins can now assign specific benefits that are paid directly by the company. This new functionality includes:\n\t•\tSet up benefits that don't consume employee points\n\t•\tDefine which employees receive company-paid benefits\n\t•\tAssigning benefits more autonomously without contacting CX\n\t•\tGreater control and customization over which benefit to give\n\nThis feature gives companies more flexibility in how they structure their benefits program, allowing for a mix of point-based and company-paid benefits.",
+      "tags": ["Admin", "Benefits"],
+      "type": "major",
+      "imageUrl": "/pbc-benefits2.png",
+      "additionalText": "\nThis feature will first be released for assigning OSDE health plans and will later support more benefits."
+    },
+    {
+      "id": "000c",
+      "date": "2025-05-07",
+      "title": "Team view improvements",
+      "description": "We've rolled out improvements to the team view in the admin platform:\n\t•\tYou can now choose which information to display when viewing your team, and adjust it on the fly.\n\t•\tYou can also filter the view by country, seniority, status, and more.\n\t•\tPlus, there's a detailed user view with more information and the ability to edit user details",
+      "tags": ["Admin", "Improvement"],
+      "type": "enhancement",
+      "videoUrl": "/admin.mov",
+    },
+    {
+      "id": "000b",
+      "date": "2025-04-27",
+      "title": "Web to app migration",
+      "description": "In conversations with our users, we identified that the best use of benefits happens in contextual situations like requesting a grocery gift card while heading to the store, using an Uber discount right after a trip, and so on.\n\n That's why we've focused on optimizing that experience through our mobile app. We've shut down our web platform and transitioned to a 100% mobile product, aiming to deliver better features, increased security, and greater convenience when using benefits.",
+      "tags": ["Teams App", "Improvement"],
+      "type": "enhancement",
+      "imageUrl": "/bannerapp.png",
+      "additionalText": "-\nDonwload the Atlas teams app on [Android](https://play.google.com/store/apps/details?id=com.atlas.teams&hl=es_AR) or [iOS](https://apps.apple.com/ar/app/atlas-teams/id6618110826?l=en-GB)."
+    },
+    {
       "id": "000a",
       "date": "2025-03-20",
       "title": "Scheduled Gifts",
-      "description": "HR Admins can now schedule gift deliveries for specific days. This feature enhances the experience in these key areas:\n\n-Admins can set up monthly gifts in advance if they already know celebration or birthday dates, saving time on management and ensuring no important date is missed.\n-Admins have more control over their budget by managing it at the beginning of the month instead of requesting fund approvals or payments each time they need to send gifts.\n\n",
+      "description": "HR Admins can now schedule gift deliveries for specific days. This feature enhances the experience in these key areas:\n- Admins can set up monthly gifts in advance if they already know celebration or birthday dates, saving time on management and ensuring no important date is missed.\n- Admins have more control over their budget by managing it at the beginning of the month instead of requesting fund approvals or payments each time they need to send gifts.\n\n",
       "tags": ["Admin", "Gifts", "New Feature"],
       "type": "enhancement",
       "videoUrl": "https://www.loom.com/embed/0d8a40308d7649cdae3b3edea8ea4e8d?sid=c3957ca3-8e9a-48f7-bf79-bd9908ed7d6d",
@@ -60,7 +98,7 @@ export const updatesData: UpdatesData = {
       "id": "001b",
       "date": "2025-03-10",
       "title": "Improved descriptions for each benefit",
-      "description": "We've enhanced the way benefits are presented in the app by adding more detailed descriptions for each one. Now you'll find:\n\n-Clear explanations of what each benefit includes\n-Step-by-step instructions on how to use them\n-Important details about restrictions or conditions\n\nThis improvement will help users better understand what they are purchasing, how they will receive it, and how to use the benefit after the purchase.",
+      "description": "We've enhanced the way benefits are presented in the app by adding more detailed descriptions for each one. Now you'll find:\n\n- Clear explanations of what each benefit includes\n- Step-by-step instructions on how to use them\n- Important details about restrictions or conditions\n\nThis improvement will help users better understand what they are purchasing, how they will receive it, and how to use the benefit after the purchase.",
       "tags": ["Teams App", "UX Improvement"],
       "type": "major",
       "imageUrl": "/benefits-description.png"
@@ -106,8 +144,8 @@ export const updatesData: UpdatesData = {
     }
   ],
   "metadata": {
-    "lastUpdate": "2025-03-20",
-    "totalUpdates": 7
+    "lastUpdate": "2025-07-01",
+    "totalUpdates": 12
   }
 };
 
@@ -184,8 +222,8 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
           <Image
             src={imageUrl}
             alt={title}
-            width={id === "001" || id === "001b" || id === "002" ? 600 : 800}
-            height={id === "001" || id === "001b" || id === "002" ? 300 : 400}
+            width={id === "001" || id === "001b" || id === "002" ? 600 : id === "000d" ? 680 : 800}
+            height={id === "001" || id === "001b" || id === "002" ? 300 : id === "000d" ? 340 : 400}
             className={`${id === "001" || id === "001b" || id === "002" ? "w-100%" : "w-100%"} rounded-xl`}
           />
         </div>
