@@ -16,6 +16,8 @@ export interface Update {
   additionalText?: string;
   buttonUrl?: string;
   buttonText?: string;
+  secondaryButtonUrl?: string;
+  secondaryButtonText?: string;
 }
 
 interface UpdatesData {
@@ -37,7 +39,9 @@ export const updatesData: UpdatesData = {
         "type": "feature",
         "imageUrl": "/introducing.png",
         "buttonUrl": "https://www.heyatlas.com/card",
-        "buttonText": "Learn More"
+        "buttonText": "Learn More",
+        "secondaryButtonUrl": "https://www.youtube.com/watch?v=Nz91We6koEQ&t=58s",
+        "secondaryButtonText": "Watch the Keynote"
     },
     {
       "id": "005",
@@ -91,7 +95,7 @@ interface UpdateContentProps {
 }
 
 const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
-  const { id, title, description, tags, type, videoUrl, imageUrl, additionalText, buttonUrl, buttonText } = update;
+  const { id, title, description, tags, type, videoUrl, imageUrl, additionalText, buttonUrl, buttonText, secondaryButtonUrl, secondaryButtonText } = update;
   
   return (
     <div className="py-8">
@@ -167,15 +171,29 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
           </ReactMarkdown>
         </div>
       )}
-      {buttonUrl && (
-        <a
-          href={buttonUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
-        >
-          {buttonText || 'Learn More'}
-        </a>
+      {(buttonUrl || secondaryButtonUrl) && (
+        <div className="flex flex-wrap gap-3">
+          {buttonUrl && (
+            <a
+              href={buttonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-2xl transition-colors duration-200"
+            >
+              {buttonText || 'Learn More'}
+            </a>
+          )}
+          {secondaryButtonUrl && (
+            <a
+              href={secondaryButtonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-transparent hover:bg-zinc-800 text-white font-medium rounded-2xl border border-zinc-700 transition-colors duration-200"
+            >
+              {secondaryButtonText || 'Learn More'}
+            </a>
+          )}
+        </div>
       )}
     </div>
   );
