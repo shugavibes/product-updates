@@ -4,25 +4,34 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 
-const upcomingData = {
+interface UpcomingUpdate {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  tags: string[];
+  type: string;
+  imageUrl?: string;
+  additionalText?: string;
+}
+
+interface UpcomingData {
+  updates: UpcomingUpdate[];
+  metadata: {
+    totalUpcoming: number;
+  };
+}
+
+const upcomingData: UpcomingData = {
   "updates": [
     {
       "id": "upcoming-001",
-      "date": "July 2025",
-      "title": "In app service payment",
-      "description": "In the new update of this feature, service payments are now processed end-to-end within the mobile app. This improves the experience of paying for services with Atlas Points in the following ways:\n\n-The contractor has greater clarity on the invoice amount and available points.\n-They can pay multiple invoices at once.\n-They can pay both fixed and open-amount invoices.\n-They can view overdue invoices.",
-      "tags": ["Teams App", "New Feature"],
+      "date": "October 2025",
+      "title": "Cards MVP",
+      "description": "We are launching the cards MVP. Ready for companies from USA and Latam to start onboarding and giving their teams the flexibility they need with Atlas Card.",
+      "tags": ["Atlas Card", "New Feature"],
       "type": "major",
-      "imageUrl": "/service-payment.png",
-      "additionalText": "\nFor now, this feature is only available for internet service payments in Argentina, but soon all services will be available in Argentina, Chile, Peru, Colombia, and Mexico."
-    },
-    {
-      "id": "upcoming-003",
-      "date": "August 2025",
-      "title": "App redesign",
-      "description": "We're bringing you a completely refreshed mobile app experience with a modern new look and feel. This comprehensive redesign focuses on improving usability and making your benefits more accessible than ever.\n\nKey improvements include:\n\n- Fresh, modern interface design\n- Enhanced user experience with intuitive navigation\n- Better information display about how to use your benefits\n\nThe new design will help you discover, understand, and use your Atlas benefits more effectively, making the most of your points and company perks.",
-      "tags": ["Teams App", "UX Improvement", "Redesign"],
-      "type": "major"
+      "imageUrl": "/card_oncell.png",
     }
   ],
   "metadata": {

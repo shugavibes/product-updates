@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import { Update } from '@/components/product-updates';
 
 export default function ProductUpdate({ update }: { update: Update }) {
-  const { title, description, tags, type, videoUrl, imageUrl, additionalText } = update;
+  const { title, description, tags, type, videoUrl, imageUrl, additionalText, buttonUrl, buttonText } = update;
 
   return (
     <div className="min-h-screen bg-[#0A0A0A]">
@@ -79,6 +79,17 @@ export default function ProductUpdate({ update }: { update: Update }) {
                 className="absolute top-0 left-0 w-full h-full rounded-xl"
               />
             </div>
+          )}
+
+          {buttonUrl && (
+            <a
+              href={buttonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+            >
+              {buttonText || 'Learn More'}
+            </a>
           )}
         </article>
       </main>
