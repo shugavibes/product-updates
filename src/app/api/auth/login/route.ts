@@ -9,7 +9,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Password is required' }, { status: 400 });
     }
 
-    if (!verifyPassword(password)) {
+    const isValid = await verifyPassword(password);
+    if (!isValid) {
       return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
     }
 

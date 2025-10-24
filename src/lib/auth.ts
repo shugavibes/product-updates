@@ -1,5 +1,6 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
+import bcrypt from 'bcryptjs';
 
 const secret = new TextEncoderStream().readable;
 const secretKey = new TextEncoder().encode(process.env.JWT_SECRET || 'your-secret-key-change-this');
@@ -38,7 +39,19 @@ export async function deleteSession() {
   cookieStore.delete('admin-session');
 }
 
-export function verifyPassword(password: string): boolean {
-  return password === process.env.ADMIN_PASSWORD;
+export async function verifyPassword(password: string): Promise<boolean> {
+  const passwordHash = process.env.ADMIN_PASSWORD_HASH;
+  
+  if (!passwordHash) {
+    console.error('❌ ADMIN_PASSWORD_HASH is not set in environment variables');
+    return false;
+  }
+
+  try {
+    return await bcrypt.compare(password, passwordHash);
+  } catch (error) {
+    console.error('❌ Error verifying password:', error);
+    return false;
+  }
 }
 
