@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { verifySession } from '@/lib/auth';
 
 const upcomingFilePath = path.join(process.cwd(), 'src/data/upcoming.json');
 
@@ -15,6 +16,12 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  // Check authentication
+  const isAuthenticated = await verifySession();
+  if (!isAuthenticated) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     const newUpdate = await request.json();
     const fileContents = fs.readFileSync(upcomingFilePath, 'utf8');

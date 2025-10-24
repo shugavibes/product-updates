@@ -1,11 +1,24 @@
 {
   "updates": [
     {
+      "id": "0003",
+      "date": "2025-10-01",
+      "title": "Atlas card ",
+      "description": "usamos el texto para bla bla bla usamos el texto para bla bla bla usamos el texto para bla bla bla usamos el texto para bla bla bla usamos el texto para bla bla bla   \\n\\n \nkjaenfkjsnkjf dsjnfdsnjksd",
+      "tags": [
+        "Update"
+      ],
+      "type": "major"
+    },
+    {
       "id": "0000",
       "date": "2025-08-25",
       "title": "Atlas Day Keynote",
       "description": "In our first ever product release event, we introduced the Atlas Card: the first global employee card for the global teams. Watch the keynote and learn more",
-      "tags": ["Atlas Card", "Product Release"],
+      "tags": [
+        "Atlas Card",
+        "Product Release"
+      ],
       "type": "major",
       "videoUrl": "https://www.youtube.com/watch?v=Nz91We6koEQ&t=58s"
     },
@@ -14,7 +27,10 @@
       "date": "2025-08-24",
       "title": "Meet the Atlas Card, our new product",
       "description": "Introducing the Atlas Card, the employee card designed to simplify everything beyond payroll 🤝 \n\n One card. 120 countries. 60 currencies. Way less chaos. 😌 Your team gets the flexibility they need, you get the clarity you need.",
-      "tags": ["Card", "Product Update"],
+      "tags": [
+        "Card",
+        "Product Update"
+      ],
       "type": "feature",
       "imageUrl": "/introducing.png",
       "buttonUrl": "https://www.heyatlas.com/card",
@@ -27,15 +43,17 @@
       "date": "2018-12-09",
       "title": "Hey, there are too many previous releases to list here right now 😉",
       "description": "We have many more releases prior to these, but we only recently started sharing them on this site, and we believe it's not worth going too far back.\n\nOur focus is on delivering value consistently, with quality and speed, so everything new we're working on will get the spotlight it deserves here.",
-      "tags": ["Atlas", "Product Updates"],
+      "tags": [
+        "Atlas",
+        "Product Updates"
+      ],
       "type": "feature",
       "videoUrl": "/liquidlogo.mov",
       "additionalText": "-\n\nPS: That's not the date of the first release, it's a random date. But if you want to learn more about Atlas, [reach out to us through our website](https://www.heyatlas.com)."
     }
   ],
   "metadata": {
-    "lastUpdate": "2025-08-25",
-    "totalUpdates": 3
+    "lastUpdate": "2025-10-01",
+    "totalUpdates": 4
   }
 }
-
