@@ -22,24 +22,13 @@ interface UpcomingData {
   };
 }
 
-const upcomingData: UpcomingData = {
-  "updates": [
-    {
-      "id": "upcoming-001",
-      "date": "October 2025",
-      "title": "Cards MVP",
-      "description": "We are launching the cards MVP. Ready for companies from USA and Latam to start onboarding and giving their teams the flexibility they need with Atlas Card.",
-      "tags": ["Atlas Card", "New Feature"],
-      "type": "major",
-      "imageUrl": "/card_oncell.png",
-    }
-  ],
-  "metadata": {
-    "totalUpcoming": 3
-  }
-};
+// Data is now loaded from JSON files via the page component
 
-const UpcomingUpdates = () => {
+interface UpcomingUpdatesProps {
+  upcomingData: UpcomingData;
+}
+
+const UpcomingUpdates: React.FC<UpcomingUpdatesProps> = ({ upcomingData }) => {
   const { updates } = upcomingData;
 
   return (

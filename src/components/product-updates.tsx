@@ -28,37 +28,7 @@ interface UpdatesData {
   };
 }
 
-export const updatesData: UpdatesData = {
-  "updates": [
-    {
-        "id": "0001",
-        "date": "2025-08-24",
-        "title": "Meet the Atlas Card, our new product",
-        "description": "Introducing the Atlas Card, the employee card designed to simplify everything beyond payroll 🤝 \n\n One card. 120 countries. 60 currencies. Way less chaos. 😌 Your team gets the flexibility they need, you get the clarity you need.",
-        "tags": ["Card", "Product Update"],
-        "type": "feature",
-        "imageUrl": "/introducing.png",
-        "buttonUrl": "https://www.heyatlas.com/card",
-        "buttonText": "Learn More",
-        "secondaryButtonUrl": "https://www.youtube.com/watch?v=Nz91We6koEQ&t=58s",
-        "secondaryButtonText": "Watch the Keynote"
-    },
-    {
-      "id": "005",
-      "date": "2018-12-09",
-      "title": "Hey, there are too many previous releases to list here right now 😉",
-      "description": "We have many more releases prior to these, but we only recently started sharing them on this site, and we believe it's not worth going too far back.\n\nOur focus is on delivering value consistently, with quality and speed, so everything new we're working on will get the spotlight it deserves here.",
-      "tags": ["Atlas", "Product Updates"],
-      "type": "feature",
-      "videoUrl": "/liquidlogo.mov",
-      "additionalText": "-\n\nPS: That's not the date of the first release, it's a random date. But if you want to learn more about Atlas, [reach out to us through our website](https://www.heyatlas.com)."
-    }
-  ],
-  "metadata": {
-    "lastUpdate": "2025-07-01",
-    "totalUpdates": 12
-  }
-};
+// Data is now loaded from JSON files via the page component
 
 const getTagColor = (type: Update['type']): string => {
   const colors = {
@@ -199,7 +169,11 @@ const UpdateContent: React.FC<UpdateContentProps> = ({ update }) => {
   );
 };
 
-const ProductUpdates = () => {
+interface ProductUpdatesProps {
+  updatesData: UpdatesData;
+}
+
+const ProductUpdates: React.FC<ProductUpdatesProps> = ({ updatesData }) => {
   const { updates } = updatesData;
 
   return (

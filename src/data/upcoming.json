@@ -1,0 +1,17 @@
+{
+  "updates": [
+    {
+      "id": "upcoming-001",
+      "date": "October 2025",
+      "title": "Cards MVP",
+      "description": "We are launching the cards MVP. Ready for companies from USA and Latam to start onboarding and giving their teams the flexibility they need with Atlas Card.",
+      "tags": ["Atlas Card", "New Feature"],
+      "type": "major",
+      "imageUrl": "/card_oncell.png"
+    }
+  ],
+  "metadata": {
+    "totalUpcoming": 1
+  }
+}
+

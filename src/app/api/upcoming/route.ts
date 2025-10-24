@@ -1,0 +1,35 @@
+import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
+
+const upcomingFilePath = path.join(process.cwd(), 'src/data/upcoming.json');
+
+export async function GET() {
+  try {
+    const fileContents = fs.readFileSync(upcomingFilePath, 'utf8');
+    const data = JSON.parse(fileContents);
+    return NextResponse.json(data);
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to read upcoming updates' }, { status: 500 });
+  }
+}
+
+export async function POST(request: Request) {
+  try {
+    const newUpdate = await request.json();
+    const fileContents = fs.readFileSync(upcomingFilePath, 'utf8');
+    const data = JSON.parse(fileContents);
+    
+    // Add new update at the beginning
+    data.updates.unshift(newUpdate);
+    data.metadata.totalUpcoming = data.updates.length;
+    
+    // Write back to file
+    fs.writeFileSync(upcomingFilePath, JSON.stringify(data, null, 2));
+    
+    return NextResponse.json({ success: true, data });
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to save upcoming update' }, { status: 500 });
+  }
+}
+
