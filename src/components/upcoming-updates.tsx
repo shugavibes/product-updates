@@ -23,19 +23,9 @@ interface UpcomingData {
 }
 
 const upcomingData: UpcomingData = {
-  "updates": [
-    {
-      "id": "upcoming-001",
-      "date": "October 2025",
-      "title": "Cards MVP",
-      "description": "We are launching the cards MVP. Ready for companies from USA and Latam to start onboarding and giving their teams the flexibility they need with Atlas Card.",
-      "tags": ["Atlas Card", "New Feature"],
-      "type": "major",
-      "imageUrl": "/card_oncell.png",
-    }
-  ],
+  "updates": [],
   "metadata": {
-    "totalUpcoming": 3
+    "totalUpcoming": 0
   }
 };
 
@@ -81,7 +71,12 @@ const UpcomingUpdates = () => {
         </header>
 
         <div className="space-y-8">
-          {updates.map((update, index) => (
+          {updates.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-gray-400 text-lg">No upcoming updates at the moment. Check back soon! ✨</p>
+            </div>
+          ) : (
+            updates.map((update, index) => (
             <React.Fragment key={update.id}>
               <div className="py-8">
                 <div className="text-sm text-gray-400 mb-4">
@@ -127,7 +122,7 @@ const UpcomingUpdates = () => {
                 <div className="border-b border-zinc-800" />
               )}
             </React.Fragment>
-          ))}
+          )))}
         </div>
       </div>
 
