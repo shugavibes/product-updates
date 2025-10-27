@@ -23,9 +23,58 @@ interface UpcomingData {
 }
 
 const upcomingData: UpcomingData = {
-  "updates": [],
+  "updates": [
+    {
+      "id": "upcoming-001",
+      "date": "November 2025",
+      "title": "Admin Redesign",
+      "description": "We're giving the admin dashboard a complete makeover. A more intuitive interface, better navigation, and powerful new controls to manage your team's cards and spending all in one place.",
+      "tags": ["Admin", "UI Update"],
+      "type": "enhancement"
+    },
+    {
+      "id": "upcoming-002",
+      "date": "December 2025",
+      "title": "Exchange Rates Visibility",
+      "description": "Users will now be able to see real-time exchange rates directly in the app. Stay informed about currency conversions and make better financial decisions for your team.",
+      "tags": ["Feature", "Exchange Rates"],
+      "type": "feature"
+    },
+    {
+      "id": "upcoming-003",
+      "date": "January 2026",
+      "title": "Card Limits and Restrictions Dashboard",
+      "description": "Introducing a new dashboard where users can view all card limits, spending restrictions, and available budgets. Full transparency for better financial planning.",
+      "tags": ["Feature", "Cards"],
+      "type": "feature"
+    },
+    {
+      "id": "upcoming-004",
+      "date": "February 2026",
+      "title": "Add Extra Funds to Balances",
+      "description": "Users will be able to add extra funds to their card balances directly through the app. More flexibility and control over your spending power.",
+      "tags": ["Feature", "Funding"],
+      "type": "feature"
+    },
+    {
+      "id": "upcoming-005",
+      "date": "March 2026",
+      "title": "Wellness Marketplace",
+      "description": "Introducing the Wellness Marketplace in the Atlas app. Discover and purchase wellness services, gym memberships, mental health resources, and more - all in one place.",
+      "tags": ["Wellness", "Marketplace"],
+      "type": "major"
+    },
+    {
+      "id": "upcoming-006",
+      "date": "April 2026",
+      "title": "Push Notifications",
+      "description": "Stay updated with real-time push notifications. Get instant alerts for transactions, card activity, budget updates, and important announcements right on your device.",
+      "tags": ["Feature", "Notifications"],
+      "type": "feature"
+    }
+  ],
   "metadata": {
-    "totalUpcoming": 0
+    "totalUpcoming": 6
   }
 };
 
