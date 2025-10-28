@@ -31,7 +31,7 @@ const upcomingData: UpcomingData = {
       "description": "We're giving the admin dashboard a complete makeover. A more intuitive interface, better navigation, and metrics to manage your team's cards and spending all in one place.",
       "tags": ["Admin", "UI Update"],
       "type": "enhancement",
-      "imageUrl": "/admin_cards.png"
+      "imageUrl": "/admin-cards.png"
     },
     {
       "id": "upcoming-002",
