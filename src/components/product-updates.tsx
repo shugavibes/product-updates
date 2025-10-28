@@ -31,13 +31,22 @@ interface UpdatesData {
 export const updatesData: UpdatesData = {
   "updates": [
     {
+        "id": "0003",
+        "date": "2025-10-01",
+        "title": "Card Programs",
+        "description": "Card programs is the easiest way to set limits and category restrictions for cards. Create the programs and choose what cards you want to have this configurations.",
+        "tags": ["Cards", "Admin"],
+        "type": "feature",
+        "imageUrl": "/card-programs.png"
+    },
+    {
         "id": "0002",
         "date": "2025-10-01",
         "title": "Cards MVP",
-        "description": "We are launching the cards MVP. Ready for companies from USA and Latam to start onboarding and giving their teams the flexibility they need with Atlas Card.\n\n**Features:**\n- Assign Cards to users\n- KYC validation\n- Your own account for funding cards\n- See transactions and balance from your team\n- Add card to wallet and see card info",
+        "description": "We are launching the cards MVP. Ready for companies from USA and Latam to start onboarding and giving their teams the flexibility they need with Atlas Card and to make easy their teams finances.\n**You will be able to:**\n- Assign Cards to users\n- Have your own account for funding cards\n- See transactions and balance from your team\n- Team members will be able to add their card to the wallet and see card info",
         "tags": ["Atlas Card", "New Feature"],
         "type": "major",
-        "imageUrl": "/card_oncell.png"
+        "imageUrl": "/card_mvp.png"
     },
     {
         "id": "0001",
@@ -65,7 +74,7 @@ export const updatesData: UpdatesData = {
   ],
   "metadata": {
     "lastUpdate": "2025-10-01",
-    "totalUpdates": 3
+    "totalUpdates": 4
   }
 };
 

@@ -30,7 +30,8 @@ const upcomingData: UpcomingData = {
       "title": "Admin Redesign",
       "description": "We're giving the admin dashboard a complete makeover. A more intuitive interface, better navigation, and metrics to manage your team's cards and spending all in one place.",
       "tags": ["Admin", "UI Update"],
-      "type": "enhancement"
+      "type": "enhancement",
+      "imageUrl": "/admin_cards.png"
     },
     {
       "id": "upcoming-002",
@@ -43,15 +44,15 @@ const upcomingData: UpcomingData = {
     {
       "id": "upcoming-003",
       "date": "November 2026",
-      "title": "Card Limits and Restrictions Dashboard",
-      "description": "Introducing a new dashboard where users can view all card limits, spending restrictions, and available budgets. Full transparency for better financial planning.",
+      "title": "Card Limits and Restrictions",
+      "description": "Users will be able to see their card limits, spending restrictions, and available budgets. Full transparency for better financial planning.",
       "tags": ["Feature", "Cards"],
       "type": "feature"
     },
     {
       "id": "upcoming-004",
       "date": "December 2026",
-      "title": "Add Extra Funds to Balances",
+      "title": "Add Extra Funds to balances",
       "description": "Users will be able to add extra funds to their card balances directly. This will allow them to take full advantage of their ballance if they want to buy something more expensive than the available balance. A great case fot this is paying for helathcare with the Atlas Card.",
       "tags": ["Feature", "Funding"],
       "type": "feature"
